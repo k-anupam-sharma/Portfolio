@@ -23,7 +23,7 @@ export default function Hero() {
   useEffect(() => {
     let loadedCount = 0;
     const totalToLoad = TOTAL_FRAMES * 2;
-    
+
     const loadTheme = (theme: "naruto" | "sasuke") => {
       for (let i = 1; i <= TOTAL_FRAMES; i++) {
         const img = new Image();
@@ -59,7 +59,7 @@ export default function Hero() {
     const render = () => {
       // Lerp frame
       currentLerpedFrame += (targetFrame - currentLerpedFrame) * 0.1;
-      
+
       let frameIndex = Math.round(currentLerpedFrame) - 1;
       if (frameIndex < 0) frameIndex = 0;
       if (frameIndex >= TOTAL_FRAMES) frameIndex = TOTAL_FRAMES - 1;
@@ -101,7 +101,7 @@ export default function Hero() {
       const rect = container.getBoundingClientRect();
       const scrollHeight = rect.height - window.innerHeight;
       const scrollY = -rect.top;
-      
+
       let progress = scrollY / scrollHeight;
       progress = Math.max(0, Math.min(1, progress));
 
@@ -140,12 +140,12 @@ export default function Hero() {
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-1000"
-          style={{ 
+          style={{
             filter: "contrast(1.1) saturate(1.2)",
             background: "#000"
           }}
         />
-        
+
         {!imagesLoaded && (
           <div className="absolute inset-0 flex items-center justify-center bg-black z-50 text-white font-mono tracking-widest text-sm">
             INITIALIZING SEQUENCES...
@@ -169,12 +169,12 @@ export default function Hero() {
 
         {/* CONTENT SECTIONS */}
         <div className="absolute inset-0 z-20 max-w-7xl mx-auto w-full h-full px-4 sm:px-6 lg:px-8 xl:px-10 [text-shadow:0_4px_16px_rgba(0,0,0,1),_0_1px_4px_rgba(0,0,0,0.9)]">
-          
+
           {/* SECTION 1: ABOUT */}
           <div className={`absolute inset-0 transition-opacity duration-700 ${activeSection === 0 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-            
+
             {/* Left Box */}
-            <div 
+            <div
               className="absolute top-1/2 -translate-y-1/2 left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20 w-[85%] sm:w-[80%] md:w-[55%] lg:w-[45%] xl:w-[38%] max-w-[420px] card-surface font-mono overflow-hidden"
               style={{ padding: "clamp(24px, 3vw, 40px)" }}
             >
@@ -182,11 +182,11 @@ export default function Hero() {
                 01 - INTRODUCTION
               </div>
               <p className="text-lg md:text-xl lg:text-xl xl:text-2xl font-medium mb-6 lg:mb-8 font-sans leading-snug break-words" style={{ color: "white" }}>
-                &quot;I am a Software and AR Developer... building the future with AI.&quot;
+                &quot;I'm a Software and AR Developer who builds intelligent & immersive experiences.&quot;
               </p>
               <div className="flex justify-between text-[9px] tracking-[0.2em] uppercase" style={{ color: "rgba(255,255,255,0.7)" }}>
-                <span>Anupam Sharma</span>
-                <span>SOFTWARE DEV</span>
+                <span>Kamakhya Anupam Sharma</span>
+                <span>SOFTWARE / AR DEV</span>
               </div>
             </div>
 
@@ -196,10 +196,10 @@ export default function Hero() {
                 {/* Electricity effects */}
                 <div className="absolute inset-[-6px] rounded-2xl chidori-glow z-0"></div>
                 <div className="absolute inset-[-2px] rounded-2xl chidori-lightning z-0"></div>
-                
-                <img 
-                  src="/profile.jpg" 
-                  alt="Anupam" 
+
+                <img
+                  src="/profile.jpg"
+                  alt="Anupam"
                   className="w-32 h-32 sm:w-36 sm:h-36 md:w-40 md:h-40 lg:w-44 lg:h-44 xl:w-52 xl:h-52 2xl:w-56 2xl:h-56 object-cover rounded-2xl grayscale group-hover:grayscale-0 transition-all duration-500 relative z-10 border-2 border-black/50"
                 />
               </div>
@@ -207,7 +207,7 @@ export default function Hero() {
                 Anupam
               </h2>
               <p className="text-xs lg:text-sm text-white/60 max-w-[32ch] lg:max-w-[36ch] xl:max-w-[40ch] text-center font-medium leading-relaxed font-sans mt-3 lg:mt-4">
-                {isNaruto 
+                {isNaruto
                   ? "A developer with a ninja way — building AI-first solutions and Augmented Reality experiences that rewrite the rules."
                   : "Shadows and code — engineering precision in the darkness. Specializing in AI-driven architecture and AR."}
               </p>
@@ -217,9 +217,9 @@ export default function Hero() {
 
           {/* SECTION 2: SKILLS */}
           <div className={`absolute inset-0 transition-opacity duration-700 ${activeSection === 1 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-            
+
             {/* Left Box */}
-            <div 
+            <div
               className="absolute top-1/2 -translate-y-1/2 left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20 w-[85%] sm:w-[80%] md:w-[55%] lg:w-[45%] xl:w-[38%] max-w-[420px] card-surface font-mono overflow-hidden"
               style={{ padding: "clamp(24px, 3vw, 40px)" }}
             >
@@ -227,11 +227,11 @@ export default function Hero() {
                 02 - SKILLS
               </div>
               <p className="text-lg md:text-xl lg:text-xl xl:text-2xl font-medium mb-6 lg:mb-8 font-sans leading-snug break-words" style={{ color: "white" }}>
-                &quot;Proficient in AI, WebXR, and robust backend architectures.&quot;
+                &quot;Proficient in  Full Stack Dev, RAG Integration, WebXR and robust backend architectures.&quot;
               </p>
               <div className="flex justify-between text-[9px] tracking-[0.2em] uppercase" style={{ color: "rgba(255,255,255,0.7)" }}>
-                <span>Tech Stack</span>
-                <span>SYSTEM ONLINE</span>
+                <span></span>
+                <span></span>
               </div>
             </div>
 
@@ -241,16 +241,16 @@ export default function Hero() {
                 <span className="text-white block drop-shadow-lg">Techniques</span>
                 <span className="drop-shadow-lg" style={{ color: "var(--accent-primary)" }}>Mastered</span>
               </h1>
-              
+
               <div className="flex flex-col gap-3 lg:gap-4 text-right items-end">
                 <div className="flex justify-end gap-2 lg:gap-3 flex-wrap max-w-xs lg:max-w-sm xl:max-w-lg">
                   {["React", "Next.js", "TypeScript", "Node.js", "Python"].map(s => (
-                    <span key={s} className="px-3 lg:px-4 py-1.5 lg:py-2 rounded-xl text-[10px] lg:text-xs font-bold font-mono tracking-wider uppercase backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_var(--accent-glow)]" style={{ background: "var(--badge-bg)", color: "var(--badge-text)", border: "1px solid var(--badge-border)" }}>{s}</span>
+                    <span key={s} className="px-3 lg:px-4 py-1 lg:py-1.5 rounded-full border border-white/50 text-white bg-white/10 hover:bg-white/20 transition-colors text-[10px] lg:text-xs font-mono backdrop-blur-md">{s}</span>
                   ))}
                 </div>
                 <div className="flex justify-end gap-2 lg:gap-3 flex-wrap max-w-xs lg:max-w-sm xl:max-w-lg">
                   {["TensorFlow", "OpenCV", "AR.js", "Three.js", "Docker"].map(s => (
-                    <span key={s} className="px-3 lg:px-4 py-1.5 lg:py-2 rounded-xl text-[10px] lg:text-xs font-bold font-mono tracking-wider uppercase backdrop-blur-xl transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_var(--accent-glow)]" style={{ background: "var(--badge-bg)", color: "var(--badge-text)", border: "1px solid var(--badge-border)" }}>{s}</span>
+                    <span key={s} className="px-3 lg:px-4 py-1 lg:py-1.5 rounded-full border border-white/50 text-white bg-white/10 hover:bg-white/20 transition-colors text-[10px] lg:text-xs font-mono backdrop-blur-md">{s}</span>
                   ))}
                 </div>
               </div>
@@ -260,9 +260,9 @@ export default function Hero() {
 
           {/* SECTION 3: VICTORIES */}
           <div className={`absolute inset-0 transition-opacity duration-700 ${activeSection === 2 ? "opacity-100" : "opacity-0 pointer-events-none"}`}>
-            
+
             {/* Left Box */}
-            <div 
+            <div
               className="absolute top-1/2 -translate-y-1/2 left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20 w-[85%] sm:w-[80%] md:w-[55%] lg:w-[45%] xl:w-[38%] max-w-[420px] card-surface font-mono overflow-hidden"
               style={{ padding: "clamp(24px, 3vw, 40px)" }}
             >
@@ -270,11 +270,11 @@ export default function Hero() {
                 03 - ACHIEVEMENTS
               </div>
               <p className="text-lg md:text-xl lg:text-xl xl:text-2xl font-medium mb-6 lg:mb-8 font-sans leading-snug break-words" style={{ color: "white" }}>
-                &quot;Conquering challenges and dominating hackathons across the nation.&quot;
+                &quot;Conquering challenges and dominating hackathons. Try, Fail, Learn, Repeat, Win.&quot;
               </p>
               <div className="flex justify-between text-[9px] tracking-[0.2em] uppercase" style={{ color: "rgba(255,255,255,0.7)" }}>
-                <span>Honor Roll</span>
-                <span>VERIFIED</span>
+                <span></span>
+                <span></span>
               </div>
             </div>
 
@@ -284,7 +284,7 @@ export default function Hero() {
                 <span className="text-white block drop-shadow-lg">Battle</span>
                 <span className="drop-shadow-lg" style={{ color: "var(--accent-primary)" }}>Victories</span>
               </h1>
-              
+
               <div className="flex flex-col gap-4 lg:gap-5 xl:gap-6 items-end text-right">
                 <div className="flex flex-col items-end border-r-2 pr-4 lg:pr-6 py-1" style={{ borderColor: "var(--accent-primary)" }}>
                   <div className="flex items-center gap-2">

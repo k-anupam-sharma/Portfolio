@@ -241,6 +241,7 @@ export default function Projects() {
           ref={introRef}
           className="absolute inset-0 flex flex-col items-center justify-center z-10 px-6 text-center transition-opacity duration-700 font-mono [text-shadow:0_4px_16px_rgba(0,0,0,1),_0_1px_4px_rgba(0,0,0,0.9)]"
         >
+
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter text-white uppercase drop-shadow-md font-sans">
             Completed <span style={{ color: "var(--accent-primary)" }}>Missions</span>
           </h2>
@@ -290,8 +291,7 @@ export default function Projects() {
                 {project.tags.map((tag, j) => (
                   <span
                     key={j}
-                    className="px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-md"
-                    style={{ border: "1px solid var(--badge-border)", background: "var(--badge-bg)", color: "var(--badge-text)" }}
+                    className="px-3 lg:px-4 py-1 lg:py-1.5 text-[10px] lg:text-xs font-bold uppercase tracking-widest rounded-full border border-white/50 text-white bg-white/10 hover:bg-white/20 transition-colors backdrop-blur-md"
                   >
                     {tag}
                   </span>
