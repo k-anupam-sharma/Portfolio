@@ -9,7 +9,7 @@ const moreProjects = [
     title: "VibeFinder",
     subtitle: "Discover places that match your vibe",
     description:
-      "Map-driven place discovery web app for Bangalore with category filters, budget controls, and live turn-by-turn directions powered by open-source geospatial APIs.",
+      "Map-driven place discovery web app for Bangalore with category filters, budget controls and live turn-by-turn directions powered by open-source geospatial APIs.",
     tags: ["OpenStreetMap", "OSRM", "Geospatial", "Web"],
     icon: MapPin,
   },
@@ -25,7 +25,7 @@ const moreProjects = [
     title: "BloodBuddy",
     subtitle: "Smart Blood Donation Management",
     description:
-      "Healthcare platform bridging blood donors and recipients with real-time availability tracking, emergency alerts, and secure authentication.",
+      "Healthcare platform bridging blood donors and recipients with real-time availability tracking, emergency alerts and secure authentication.",
     tags: ["Healthcare", "Real-time", "Full-Stack"],
     icon: Drop,
   },
@@ -68,7 +68,7 @@ export default function MoreProjects() {
       <div className="mx-auto max-w-[1200px] relative z-10 w-full">
         {/* EXPLICIT SPACERS (136px top + 64px bottom = 200px gap) */}
         <div style={{ height: "136px" }} className="w-full flex-shrink-0 block" aria-hidden="true" />
-        
+
         <AnimatedSection className="text-center flex flex-col items-center w-full -mb-16 md:-mb-20 lg:-mb-28 relative z-0">
           <AnimatedItem>
             <h2
@@ -83,7 +83,7 @@ export default function MoreProjects() {
         <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-12 items-stretch justify-items-center w-full relative z-10">
           {moreProjects.map((project, i) => (
             <AnimatedItem key={i} className="w-full h-full flex">
-              <div 
+              <div
                 className="card-surface flex flex-col items-center text-center gap-6 lg:gap-8 w-full max-w-[450px] mx-auto h-full"
                 style={{ justifyContent: "center", padding: "clamp(1.5rem, 3vw, 3rem)" }}
               >
