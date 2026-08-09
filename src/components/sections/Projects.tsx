@@ -251,9 +251,9 @@ export default function Projects() {
         {projects.map((project, i) => (
           <div
             key={i}
-            className={`absolute top-1/2 -translate-y-1/2 z-20 transition-all duration-500 w-[90%] sm:w-[85%] md:w-[60%] lg:w-[50%] xl:w-[45%] max-w-[500px] ${i % 2 === 0
-              ? "left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20"
-              : "right-4 sm:right-8 md:right-12 lg:right-16 xl:right-20"
+            className={`absolute top-1/2 -translate-y-1/2 z-20 transition-all duration-500 w-[95%] sm:w-[85%] md:w-[60%] lg:w-[50%] xl:w-[45%] max-w-[500px] left-1/2 -translate-x-1/2 md:translate-x-0 ${i % 2 === 0
+              ? "md:left-12 lg:left-16 xl:left-20"
+              : "md:left-auto md:right-12 lg:right-16 xl:right-20"
               } ${visibleCards.has(i)
                 ? "opacity-100"
                 : "opacity-0 pointer-events-none"

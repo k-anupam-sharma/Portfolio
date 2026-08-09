@@ -148,7 +148,7 @@ export default function Hero() {
 
         {!imagesLoaded && (
           <div className="absolute inset-0 flex items-center justify-center bg-black z-50 text-white font-mono tracking-widest text-sm">
-            INITIALIZING SEQUENCES...
+            CHAKRA REPLENISHING...
           </div>
         )}
 
@@ -175,7 +175,7 @@ export default function Hero() {
 
             {/* Left Box */}
             <div
-              className="absolute top-1/2 -translate-y-1/2 left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20 w-[85%] sm:w-[80%] md:w-[55%] lg:w-[45%] xl:w-[38%] max-w-[420px] card-surface font-mono overflow-hidden"
+              className="absolute top-[65%] md:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-12 lg:left-16 xl:left-20 w-[90%] sm:w-[85%] md:w-[55%] lg:w-[45%] xl:w-[38%] max-w-[420px] card-surface font-mono overflow-hidden"
               style={{ padding: "clamp(24px, 3vw, 40px)" }}
             >
               <div className="text-[10px] tracking-widest mb-4 lg:mb-6" style={{ color: "var(--accent-primary)" }}>
@@ -191,7 +191,7 @@ export default function Hero() {
             </div>
 
             {/* Right Photo Frame */}
-            <div className="absolute top-1/2 -translate-y-1/2 -right-18 flex flex-col items-center">
+            <div className="absolute top-[30%] md:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:-right-18 flex flex-col items-center w-[90%] md:w-auto">
               <div className="relative group cursor-pointer">
                 {/* Electricity effects */}
                 <div className="absolute inset-[-6px] rounded-2xl chidori-glow z-0"></div>
@@ -220,7 +220,7 @@ export default function Hero() {
 
             {/* Left Box */}
             <div
-              className="absolute top-1/2 -translate-y-1/2 left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20 w-[85%] sm:w-[80%] md:w-[55%] lg:w-[45%] xl:w-[38%] max-w-[420px] card-surface font-mono overflow-hidden"
+              className="absolute top-[65%] md:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-12 lg:left-16 xl:left-20 w-[90%] sm:w-[85%] md:w-[55%] lg:w-[45%] xl:w-[38%] max-w-[420px] card-surface font-mono overflow-hidden"
               style={{ padding: "clamp(24px, 3vw, 40px)" }}
             >
               <div className="text-[10px] tracking-widest mb-4 lg:mb-6" style={{ color: "var(--accent-primary)" }}>
@@ -236,19 +236,19 @@ export default function Hero() {
             </div>
 
             {/* Right Skills Typography */}
-            <div className="absolute top-1/2 -translate-y-1/2 -right-18 text-right">
+            <div className="absolute top-[32%] md:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:-right-18 text-center md:text-right w-[95%] md:w-auto flex flex-col items-center md:items-end">
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter mb-6 lg:mb-8">
                 <span className="text-white block drop-shadow-lg">Techniques</span>
                 <span className="drop-shadow-lg" style={{ color: "var(--accent-primary)" }}>Mastered</span>
               </h1>
 
-              <div className="flex flex-col gap-3 lg:gap-4 text-right items-end">
-                <div className="flex justify-end gap-2 lg:gap-3 flex-wrap max-w-xs lg:max-w-sm xl:max-w-lg">
+              <div className="flex flex-col gap-3 lg:gap-4 text-center md:text-right items-center md:items-end w-full">
+                <div className="flex justify-center md:justify-end gap-2 lg:gap-3 flex-wrap max-w-full lg:max-w-sm xl:max-w-lg">
                   {["React", "Next.js", "TypeScript", "Node.js", "Python"].map(s => (
                     <span key={s} className="px-3 lg:px-4 py-1 lg:py-1.5 rounded-full border border-white/50 text-white bg-white/10 hover:bg-white/20 transition-colors text-[10px] lg:text-xs font-mono backdrop-blur-md">{s}</span>
                   ))}
                 </div>
-                <div className="flex justify-end gap-2 lg:gap-3 flex-wrap max-w-xs lg:max-w-sm xl:max-w-lg">
+                <div className="flex justify-center md:justify-end gap-2 lg:gap-3 flex-wrap max-w-full lg:max-w-sm xl:max-w-lg">
                   {["TensorFlow", "OpenCV", "AR.js", "Three.js", "Docker"].map(s => (
                     <span key={s} className="px-3 lg:px-4 py-1 lg:py-1.5 rounded-full border border-white/50 text-white bg-white/10 hover:bg-white/20 transition-colors text-[10px] lg:text-xs font-mono backdrop-blur-md">{s}</span>
                   ))}
@@ -263,7 +263,7 @@ export default function Hero() {
 
             {/* Left Box */}
             <div
-              className="absolute top-1/2 -translate-y-1/2 left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20 w-[85%] sm:w-[80%] md:w-[55%] lg:w-[45%] xl:w-[38%] max-w-[420px] card-surface font-mono overflow-hidden"
+              className="absolute top-[65%] md:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-12 lg:left-16 xl:left-20 w-[90%] sm:w-[85%] md:w-[55%] lg:w-[45%] xl:w-[38%] max-w-[420px] card-surface font-mono overflow-hidden"
               style={{ padding: "clamp(24px, 3vw, 40px)" }}
             >
               <div className="text-[10px] tracking-widest mb-4 lg:mb-6" style={{ color: "var(--accent-primary)" }}>
@@ -279,28 +279,28 @@ export default function Hero() {
             </div>
 
             {/* Right Victories */}
-            <div className="absolute top-1/2 -translate-y-1/2 -right-18 text-right">
+            <div className="absolute top-[32%] md:top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2 md:translate-x-0 md:left-auto md:-right-18 text-center md:text-right w-[95%] md:w-auto flex flex-col items-center md:items-end">
               <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black tracking-tighter mb-6 lg:mb-8 xl:mb-10">
                 <span className="text-white block drop-shadow-lg">Battle</span>
                 <span className="drop-shadow-lg" style={{ color: "var(--accent-primary)" }}>Victories</span>
               </h1>
 
-              <div className="flex flex-col gap-4 lg:gap-5 xl:gap-6 items-end text-right">
-                <div className="flex flex-col items-end border-r-2 pr-4 lg:pr-6 py-1" style={{ borderColor: "var(--accent-primary)" }}>
+              <div className="flex flex-col gap-4 lg:gap-5 xl:gap-6 items-center md:items-end text-center md:text-right w-full">
+                <div className="flex flex-col items-center md:items-end border-b-2 md:border-b-0 md:border-r-2 pb-4 md:pb-0 pr-0 md:pr-4 lg:pr-6 py-1 w-full md:w-auto" style={{ borderColor: "var(--accent-primary)" }}>
                   <div className="flex items-center gap-2">
                     <Trophy weight="fill" className="text-yellow-400 drop-shadow-md shrink-0" size={20} />
                     <span className="text-white font-bold text-base lg:text-lg xl:text-xl drop-shadow-md">1st Place — Virtuovation AR Hackathon</span>
                   </div>
                   <span className="text-white/70 text-[10px] lg:text-xs tracking-widest font-mono mt-1.5 lg:mt-2">BNM INSTITUTE OF TECHNOLOGY</span>
                 </div>
-                <div className="flex flex-col items-end border-r-2 pr-4 lg:pr-6 py-1 border-white/20">
+                <div className="flex flex-col items-center md:items-end border-b-2 md:border-b-0 md:border-r-2 pb-4 md:pb-0 pr-0 md:pr-4 lg:pr-6 py-1 border-white/20 w-full md:w-auto">
                   <div className="flex items-center gap-2">
                     <Trophy weight="fill" className="text-yellow-400 drop-shadow-md shrink-0" size={18} />
                     <span className="text-white font-bold text-sm lg:text-base xl:text-lg drop-shadow-md">1st Place — GenBLAZE Hackathon</span>
                   </div>
                   <span className="text-white/70 text-[10px] lg:text-xs tracking-widest font-mono mt-1.5 lg:mt-2">AMC ENGINEERING COLLEGE</span>
                 </div>
-                <div className="flex flex-col items-end border-r-2 pr-4 lg:pr-6 py-1 border-white/20">
+                <div className="flex flex-col items-center md:items-end border-b-2 md:border-b-0 md:border-r-2 pb-4 md:pb-0 pr-0 md:pr-4 lg:pr-6 py-1 border-white/20 w-full md:w-auto">
                   <div className="flex items-center gap-2">
                     <Medal weight="fill" className="text-gray-300 drop-shadow-md shrink-0" size={18} />
                     <span className="text-white font-bold text-sm lg:text-base xl:text-lg drop-shadow-md">4th Place — National Innovation Project</span>
