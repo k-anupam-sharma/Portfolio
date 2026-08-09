@@ -1,0 +1,480 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-outfit), system-ui, sans-serif;
+}
+
+/* ===== NARUTO THEME (LIGHT MODE) ===== */
+:root {
+  --background: #FFF8F0;
+  --foreground: #1a0a00;
+  --card-bg: rgba(255, 255, 255, 0.35); /* Liquid Glass */
+  --muted: #8B6914;
+
+  /* Naruto Orange / Yellow palette */
+  --accent-primary: #FF6B00;
+  --accent-secondary: #FFB347;
+  --accent-glow: rgba(255, 107, 0, 0.4);
+  --accent-gradient: linear-gradient(135deg, #FF6B00 0%, #FFB347 50%, #FF8C00 100%);
+  --accent-gradient-text: linear-gradient(135deg, #FF6B00, #E65100);
+
+  /* Naruto specific */
+  --hero-bg: linear-gradient(180deg, #FFF8F0 0%, #FFF8F0 100%);
+  --section-bg: #FFF8F0;
+  --section-bg-alt: #FFF8F0;
+  --card-border: rgba(255, 255, 255, 0.6);
+  --card-shadow:
+    10px 10px 24px rgba(224, 215, 205, 0.8),
+    -10px -10px 24px rgba(255, 255, 255, 0.9);
+
+  --text-primary: #1a0a00;
+  --text-secondary: #5D4037;
+  --text-muted: #8D6E63;
+
+  --navbar-bg: rgba(255, 248, 240, 0.7);
+  --navbar-border: rgba(255, 107, 0, 0.2);
+
+  --badge-bg: rgba(255, 107, 0, 0.1);
+  --badge-text: #E65100;
+  --badge-border: rgba(255, 107, 0, 0.3);
+
+  --scroll-progress: linear-gradient(90deg, #FF6B00, #FFB347);
+  --loading-bg: #FFF8F0;
+}
+
+/* ===== SASUKE THEME (HUD MODE) ===== */
+[data-theme="sasuke"] {
+  --background: #000000;
+  --foreground: #ffffff;
+  --card-bg: rgba(20, 20, 25, 0.3); /* Liquid Glass */
+  --muted: #888888;
+
+  --accent-primary: #7C3AED;
+  --accent-secondary: #A78BFA;
+  --accent-glow: rgba(124, 58, 237, 0.4);
+  --accent-gradient: #7C3AED;
+  --accent-gradient-text: #7C3AED;
+
+  --hero-bg: #000000;
+  --section-bg: #050505;
+  --section-bg-alt: #000000;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: none;
+
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: rgba(255, 255, 255, 0.4);
+
+  --navbar-bg: transparent;
+  --navbar-border: transparent;
+
+  --badge-bg: rgba(124, 58, 237, 0.15);
+  --badge-text: #A78BFA;
+  --badge-border: rgba(124, 58, 237, 0.4);
+
+  --scroll-progress: #7C3AED;
+  --loading-bg: #000000;
+}
+
+/* ===== BASE STYLES ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  transition: background-color 0.6s ease, color 0.6s ease;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-oswald), system-ui, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-primary);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-secondary);
+}
+
+/* ===== CARD SURFACES (LIQUID GLASS) ===== */
+.card-surface {
+  background: var(--card-bg);
+  border-radius: clamp(16px, 2vw, 24px);
+  box-shadow: 
+    var(--card-shadow),
+    0 10px 40px -10px rgba(0, 0, 0, 0.3),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.5), 
+    inset -1px -1px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(48px) saturate(160%);
+  -webkit-backdrop-filter: blur(48px) saturate(160%);
+  will-change: transform, opacity;
+  transform: translateZ(0); /* Force GPU acceleration */
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card-surface:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    var(--card-shadow),
+    0 20px 40px -15px var(--accent-glow);
+}
+
+/* ===== SCROLL ANIMATION ===== */
+.scroll-animation {
+  height: 400vh;
+}
+
+@media (max-width: 1366px) {
+  .scroll-animation { height: 380vh !important; }
+}
+
+@media (max-width: 1280px) {
+  .scroll-animation { height: 360vh !important; }
+}
+
+@media (max-width: 1024px) {
+  .scroll-animation { height: 350vh !important; }
+}
+
+@media (max-width: 768px) {
+  .scroll-animation { height: 300vh !important; }
+}
+
+/* ===== GLOWING TEXT ===== */
+.glow-text {
+  background: var(--accent-gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== ACCENT BUTTON ===== */
+.accent-btn {
+  background: var(--accent-gradient);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  padding: clamp(10px, 1.2vw, 14px) clamp(20px, 2.5vw, 32px);
+  font-weight: 600;
+  font-size: clamp(0.8rem, 0.9vw, 1rem);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.02em;
+}
+
+.accent-btn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.accent-btn:hover::before {
+  left: 100%;
+}
+
+.accent-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -5px var(--accent-glow);
+}
+
+/* ===== JAPANESE PATTERN OVERLAY ===== */
+.pattern-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF6B00' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-theme="sasuke"] .pattern-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%237C3AED' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ===== CHAKRA SPINNER ===== */
+@keyframes chakra-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.chakra-spinner {
+  animation: chakra-spin 3s linear infinite;
+}
+
+/* ===== KUNAI DIVIDER ===== */
+.kunai-divider {
+  width: 100%;
+  height: 2px;
+  background: var(--accent-gradient);
+  position: relative;
+  margin: 0 auto;
+  opacity: 0.4;
+}
+
+/* ===== FLOATING PARTICLES ===== */
+@keyframes float-particle {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  animation: float-particle 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ===== SHARINGAN / RASENGAN SPINNER ===== */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--accent-glow), 0 0 40px var(--accent-glow); }
+  50% { box-shadow: 0 0 40px var(--accent-glow), 0 0 80px var(--accent-glow); }
+}
+
+.jutsu-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* ===== SECTION TRANSITIONS ===== */
+.section-fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-fade.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== BADGE STYLE ===== */
+.ninja-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 9999px;
+  border: 1px solid var(--badge-border);
+  background: var(--badge-bg);
+  padding: 6px 16px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--badge-text);
+  backdrop-filter: blur(12px);
+}
+
+/* ===== LOADING SCREEN ===== */
+.loading-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: var(--loading-bg);
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.5s ease;
+}
+
+.loading-bar-track {
+  width: 280px;
+  height: 4px;
+  background: rgba(128,128,128,0.15);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 24px;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: var(--accent-gradient);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+/* ===== THEME TOGGLE ===== */
+.theme-toggle {
+  position: relative;
+  width: 72px;
+  height: 36px;
+  border-radius: 18px;
+  border: 2px solid var(--accent-primary);
+  background: var(--card-bg);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.theme-toggle-knob {
+  position: absolute;
+  top: 2px;
+  width: 28px;
+  height: 28px;
+  border-radius: 14px;
+  background: var(--accent-gradient);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.theme-toggle-knob.naruto {
+  left: 2px;
+}
+
+.theme-toggle-knob.sasuke {
+  left: 38px;
+}
+
+/* ===== SKILL TAG ===== */
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  background: var(--badge-bg);
+  color: var(--badge-text);
+  border: 1px solid var(--badge-border);
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+/* ===== TIMELINE ===== */
+.timeline-line {
+  position: absolute;
+  left: 19px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent-gradient);
+  opacity: 0.3;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  border: 2px solid var(--card-bg);
+  box-shadow: 0 0 10px var(--accent-glow);
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== VIDEO OVERLAY GRADIENT ===== */
+.video-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+}
+
+.video-overlay-naruto {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 248, 240, 0.1) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(255, 248, 240, 0.3) 100%
+  );
+}
+
+.video-overlay-sasuke {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 10, 20, 0.2) 0%,
+    transparent 30%,
+    transparent 70%,
+    rgba(10, 10, 20, 0.4) 100%
+  );
+}
+
+/* ===== CHIDORI ANIMATED FRAME ===== */
+.chidori-glow {
+  background: transparent;
+  box-shadow: 0 0 15px var(--accent-glow), inset 0 0 10px var(--accent-glow);
+  animation: chidori-pulse 3s ease-in-out infinite alternate;
+}
+
+.chidori-lightning {
+  border: 1px solid var(--accent-primary);
+  background: transparent;
+  animation: chidori-crackle 4s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes chidori-pulse {
+  0% { box-shadow: 0 0 15px var(--accent-glow), inset 0 0 10px var(--accent-glow); }
+  50% { box-shadow: 0 0 25px var(--accent-primary), inset 0 0 20px var(--accent-glow); }
+  100% { box-shadow: 0 0 15px var(--accent-glow), inset 0 0 10px var(--accent-glow); }
+}
+
+@keyframes chidori-crackle {
+  0% { transform: scale(1) rotate(0deg); opacity: 0.6; border-color: var(--accent-primary); }
+  50% { transform: scale(1.02) rotate(1deg); opacity: 1; border-color: var(--accent-secondary); border-width: 2px; }
+  100% { transform: scale(0.99) rotate(-1deg); opacity: 0.8; border-color: var(--accent-primary); border-width: 1px; }
+}
+
+.group:hover .chidori-glow {
+  animation: chidori-pulse 1.5s ease-in-out infinite alternate;
+}
+.group:hover .chidori-lightning {
+  animation: chidori-crackle 1.5s ease-in-out infinite alternate;
+}
