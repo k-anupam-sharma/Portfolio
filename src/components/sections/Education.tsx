@@ -69,7 +69,7 @@ export default function Education() {
           {/* Education Grid */}
           <AnimatedSection className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 xl:gap-12 items-stretch justify-items-center w-full relative z-10">
             {education.map((edu, i) => (
-              <AnimatedItem key={i} delay={i * 0.1} className="w-full h-full flex">
+              <AnimatedItem key={i} className="w-full h-full flex">
                 <div
                   className="card-surface flex flex-col items-center text-center gap-6 lg:gap-8 w-full max-w-[420px] mx-auto h-full"
                   style={{ justifyContent: "center", padding: "clamp(1.5rem, 3vw, 3rem)" }}
@@ -116,7 +116,7 @@ export default function Education() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-5 xl:gap-6 items-stretch justify-items-center w-full relative z-10">
               {certifications.map((cert, i) => (
-                <AnimatedItem key={i} delay={i * 0.05} className="w-full h-full flex">
+                <AnimatedItem key={i} className="w-full h-full flex">
                   <div
                     className="card-surface flex flex-col items-center text-center gap-4 lg:gap-6 w-full max-w-[360px] mx-auto h-full"
                     style={{ justifyContent: "center", padding: "clamp(1.5rem, 2.5vw, 3rem)" }}
