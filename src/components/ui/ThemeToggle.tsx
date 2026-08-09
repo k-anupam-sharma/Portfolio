@@ -21,11 +21,11 @@ export default function ThemeToggle() {
       <span
         style={{
           position: "absolute",
-          right: isNaruto ? 8 : "auto",
-          left: isNaruto ? "auto" : 8,
+          right: isNaruto ? 12 : "auto",
+          left: isNaruto ? "auto" : 12,
           top: "50%",
           transform: "translateY(-50%)",
-          fontSize: "12px",
+          fontSize: "14px",
           opacity: 0.6,
         }}
       >

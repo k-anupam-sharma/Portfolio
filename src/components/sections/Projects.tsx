@@ -9,7 +9,7 @@ const projects = [
   {
     title: "aidAR",
     subtitle: "AR + AI Medical System",
-    description: "Next-gen medical education platform with AR modules, conversational AI diagnostic engine, and interactive 3D anatomical models for life-saving procedure training.",
+    description: "Next-gen medical education platform and app with AR modules, conversational AI diagnostic engine and interactive 3D anatomical models for life-saving procedure training.",
     tags: ["AR", "AI", "Unity", "Medical"],
     show: 0.04,
     hide: 0.18,
@@ -17,7 +17,7 @@ const projects = [
   {
     title: "plattAR",
     subtitle: "3D Smart AR Menu",
-    description: "Scalable AR restaurant menu with Node.js/Express backend, React Native dashboard, and WebXR integration for photorealistic food models anchored on tables.",
+    description: "Scalable AR restaurant menu with Node.js/Express backend, React Native dashboard and WebXR integration for photorealistic food models anchored on tables.",
     tags: ["WebXR", "Node.js", "React Native", "Blender"],
     show: 0.20,
     hide: 0.34,
@@ -25,7 +25,7 @@ const projects = [
   {
     title: "Codinger",
     subtitle: "AI-Powered Coding Mentor",
-    description: "Browser-based coding platform with AI mentor (Hindsight) supporting 10 languages, live complexity analysis, collaborative mode, and progress dashboard.",
+    description: "Browser-based coding platform with AI mentor and memory function (Hindsight) supporting 10 languages, live complexity analysis, collaborative mode and progress dashboard.",
     tags: ["AI", "JavaScript", "Full-Stack"],
     show: 0.36,
     hide: 0.50,
@@ -33,7 +33,7 @@ const projects = [
   {
     title: "Smart BlindStick",
     subtitle: "IoT Assistive Technology",
-    description: "Raspberry Pi 4-powered smart stick with IMU tilt detection, GPS tracking, voice guidance, and automated Telegram emergency alerts with live location.",
+    description: "Arduino Uno + Raspberry Pi 4-powered smart stick and belt system with Face Detection, IMU tilt detection, GPS tracking, voice guidance and automated Telegram emergency alerts with live location.",
     tags: ["IoT", "Raspberry Pi", "Python", "GPS"],
     show: 0.52,
     hide: 0.66,
@@ -53,7 +53,7 @@ export default function Projects() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const tickingRef = useRef(false);
-  
+
   const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
   const [ctaVisible, setCtaVisible] = useState(false);
   const { isNaruto } = useTheme();
@@ -70,7 +70,7 @@ export default function Projects() {
   useEffect(() => {
     let loadedCount = 0;
     const totalToLoad = TOTAL_FRAMES * 2;
-    
+
     const loadTheme = (theme: "naruto" | "sasuke") => {
       for (let i = 1; i <= TOTAL_FRAMES; i++) {
         const img = new Image();
@@ -204,12 +204,12 @@ export default function Projects() {
       style={{ height: "500vh" }}
     >
       <div className="sticky top-0 h-screen overflow-hidden">
-        
+
         {/* Canvas Background */}
         <canvas
           ref={canvasRef}
           className="absolute inset-0 w-full h-full object-cover opacity-90 transition-opacity duration-1000"
-          style={{ 
+          style={{
             filter: "contrast(1.1) saturate(1.2)",
             background: "#000"
           }}
@@ -251,27 +251,25 @@ export default function Projects() {
         {projects.map((project, i) => (
           <div
             key={i}
-            className={`absolute top-1/2 -translate-y-1/2 z-20 transition-all duration-500 w-[90%] sm:w-[85%] md:w-[60%] lg:w-[50%] xl:w-[45%] max-w-[500px] ${
-              i % 2 === 0
-                ? "left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20"
-                : "right-4 sm:right-8 md:right-12 lg:right-16 xl:right-20"
-            } ${
-              visibleCards.has(i)
+            className={`absolute top-1/2 -translate-y-1/2 z-20 transition-all duration-500 w-[90%] sm:w-[85%] md:w-[60%] lg:w-[50%] xl:w-[45%] max-w-[500px] ${i % 2 === 0
+              ? "left-4 sm:left-8 md:left-12 lg:left-16 xl:left-20"
+              : "right-4 sm:right-8 md:right-12 lg:right-16 xl:right-20"
+              } ${visibleCards.has(i)
                 ? "opacity-100"
                 : "opacity-0 pointer-events-none"
-            }`}
+              }`}
           >
-            <div 
+            <div
               className="card-surface font-mono relative overflow-hidden break-words [text-shadow:0_4px_16px_rgba(0,0,0,1),_0_1px_4px_rgba(0,0,0,0.9)] transition-all duration-700"
-              style={{ 
-                padding: "clamp(24px, 3vw, 40px)", 
+              style={{
+                padding: "clamp(24px, 3vw, 40px)",
                 backdropFilter: visibleCards.has(i) ? "blur(24px) saturate(200%)" : "blur(0px) saturate(100%)",
-                WebkitBackdropFilter: visibleCards.has(i) ? "blur(24px) saturate(200%)" : "blur(0px) saturate(100%)" 
+                WebkitBackdropFilter: visibleCards.has(i) ? "blur(24px) saturate(200%)" : "blur(0px) saturate(100%)"
               }}
             >
               {/* HUD scanline effect */}
               <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-[200%] animate-scan pointer-events-none opacity-30" />
-              
+
               <div className="flex items-center justify-between mb-6 lg:mb-8">
                 <span className="text-[10px] lg:text-xs font-bold tracking-widest uppercase" style={{ color: "rgba(255,255,255,0.7)" }}>
                   Mission <span style={{ color: "var(--accent-primary)" }}>#{String(i + 1).padStart(2, "0")}</span>
@@ -303,9 +301,8 @@ export default function Projects() {
 
         {/* CTA at the end */}
         <div
-          className={`absolute inset-0 z-30 flex items-center justify-center transition-all duration-700 ${
-            ctaVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-          } bg-black/60 backdrop-blur-sm`}
+          className={`absolute inset-0 z-30 flex items-center justify-center transition-all duration-700 ${ctaVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+            } bg-black/60 backdrop-blur-sm`}
         >
           <div className="text-center px-6 font-mono text-white flex flex-col items-center">
             <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tighter font-sans drop-shadow-md text-center">
@@ -316,8 +313,8 @@ export default function Projects() {
             <p className="mt-6 lg:mt-8 text-[10px] lg:text-xs tracking-[0.2em] text-center uppercase max-w-[36ch] lg:max-w-[40ch] mx-auto leading-loose text-white/70">
               These are just some highlights. Scroll further to explore the archives.
             </p>
-            <a 
-              href="#more-projects" 
+            <a
+              href="#more-projects"
               className="mt-8 lg:mt-12 inline-flex items-center justify-center gap-3 accent-btn uppercase tracking-widest text-xs lg:text-sm"
             >
               CONTINUE <span>↓</span>

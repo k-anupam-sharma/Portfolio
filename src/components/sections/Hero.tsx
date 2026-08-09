@@ -270,7 +270,7 @@ export default function Hero() {
                 03 - ACHIEVEMENTS
               </div>
               <p className="text-lg md:text-xl lg:text-xl xl:text-2xl font-medium mb-6 lg:mb-8 font-sans leading-snug break-words" style={{ color: "white" }}>
-                &quot;Conquering challenges and dominating hackathons. Try, Fail, Learn, Repeat, Win.&quot;
+                &quot;Conquering challenges and dominating hackathons. Try, Fail, Learn, Repeat.&quot;
               </p>
               <div className="flex justify-between text-[9px] tracking-[0.2em] uppercase" style={{ color: "rgba(255,255,255,0.7)" }}>
                 <span></span>
