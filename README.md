@@ -1,8 +1,8 @@
-# Kamakhya Anupam Sharma - Professional Portfolio
+# Kamakhya Anupam Sharma - Portfolio
 
 ![Portfolio Overview](https://img.shields.io/badge/Status-Active-brightgreen.svg) ![Next.js](https://img.shields.io/badge/Next.js-14%2B-black?logo=next.js) ![React](https://img.shields.io/badge/React-19-blue?logo=react) ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3-38B2AC?logo=tailwind-css)
 
-Hey there! Welcome to the source code for my **Professional Portfolio**. 
+Hey there! Welcome to the source code for my **Portfolio**. 
 
 I built this project to act as a highly interactive, performance-optimized and aesthetically premium showcase of my projects, academic records, credentials and contact information with theme being the 2000s Japanese anime - Naruto. I wanted my portfolio to feel more like a digital experience than a standard, static resume.
 
